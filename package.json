@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/joshhedstrom/brainAnalytics#readme",
   "dependencies": {
-    "brain.js": "^1.1.2"
+    "brain.js": "^1.1.2",
+    "unirest": "^0.5.1"
   }
 }
