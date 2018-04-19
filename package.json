@@ -1,0 +1,23 @@
+{
+  "name": "brainAnalytics",
+  "version": "1.0.0",
+  "description": "a demonstration of brain.js",
+  "main": "ml.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshhedstrom/brainAnalytics.git"
+  },
+  "keywords": [],
+  "author": "Josh Hedstrom <josh.hedstrom@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshhedstrom/brainAnalytics/issues"
+  },
+  "homepage": "https://github.com/joshhedstrom/brainAnalytics#readme",
+  "dependencies": {
+    "brain.js": "^1.1.2"
+  }
+}
