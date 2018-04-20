@@ -71,7 +71,7 @@ let result = net.run({
 });
 ```
 
-It will run through the 20k iterations. In theory, at the end, it will tell you what factos go into a wine with a quality of 0.9. It will probably look something like this:
+It will run through the 20k iterations. In theory, at the end, it will tell you what factors go into a wine with a quality of 0.9. It will probably look something like this:
 ```
 iterations: 20000, training error: 0.015436195679448003
 { fa: 0.8056249022483826,
