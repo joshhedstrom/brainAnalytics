@@ -1,74 +1,46 @@
+const brain = require('brain.js')
 const wineData = require('./wineData.json')
-
-// console.log(wineData.length)
-
+let net = new brain.NeuralNetwork();
 let wineArray = [];
-
-// for (var i = 1; i < wineData.length; i++) {
-// 	let item = 'wine' + i;
-// 	// console.log(item)
-// 	// wineArray.push(item);
-// }
 
 for (let i = 1; i < wineData.length; i++) {
 
-	// let name = 'wine' + i;
+	wineArray.push({
+		input: {
+			fa: wineData[i].fixedAcidity / 10,
+			va: wineData[i].volatileAcidity / 10,
+			ca: wineData[i].citricAcid / 10,
+			rs: wineData[i].residualSugar / 10,
+			ch: wineData[i].chlorides / 10,
+			fsd: wineData[i].freeSulfurDioxide / 100,
+			tsd: wineData[i].totalSulfurDioxide / 100,
+			den: wineData[i].density / 10,
+			ph: wineData[i].pH / 10,
+			su: wineData[i].sulphates / 10,
+			al: wineData[i].alcohol / 10,
 
-	let wine = new InputDataItem(wineData[i].fixedAcidity, wineData[i].volatileAcidity, wineData[i].citricAcid, wineData[i].residualSugar, wineData[i].chlorides, wineData[i].freeSulfurDioxide, wineData[i].totalSulfurDioxide, wineData[i].density, wineData[i].pH, wineData[i].sulphates, wineData[i].alcohol, wineData[i].quality)
-	// console.log(name)	
-	wineArray.push(wine);
-	// console.log(wineArray)
-}
- // {
- //    "fixedAcidity": 7.4,
- //    "volatileAcidity": 0.7,
- //    "citricAcid": 0,
- //    "residualSugar": 1.9,
- //    "chlorides": 0.076,
- //    "freeSulfurDioxide": 11,
- //    "totalSulfurDioxide": 34,
- //    "density": 0.9978,
- //    "pH": 3.51,
- //    "sulphates": 0.56,
- //    "alcohol": 9.4,
- //    "quality": 5
- //  },
-
-
-function InputDataItem (fa, va, ca, rs, ch, fsd, tsd, den, ph, su, al, qual) {
-	input: {
-	this.fa = fa;
-	this.va = va;
-	this.ca = ca;
-	this.rs = rs;
-	this.ch = ch;
-	this.fsd = fsd;
-	this.tsd = tsd;
-	this.den = den;
-	this.ph = ph;
-	this.su = su;
-	this.al = al;
-	}
-	output: {
-		this.qual = qual;
-	}
+		},
+		output: {
+			qual: wineData[i].quality / 10,
+			
+		}
+	})
 }
 
-// console.log(wineArray.length)
-console.log(wineArray)
+net.train(wineArray, {log: true});
 
+let output = net.run({
+	fa: 0.74,
+	va: 0.07,
+	ca: 0,
+	rs: 0.19,
+	ch: 0.0076,
+	fsd: 0.11,
+	tsd: 0.34,
+	den: 0.09978,
+	ph: 0.351,
+	su: 0.056,
+	al: 0.94,
+});
 
-// const brain = require('brain.js')
-
-// let net = new brain.NeuralNetwork();
-
-// // const trainingData = [
-// // 		   {input: { r: 0.03, g: 0.7, b: 0.5 }, output: { black: 1 }},
-// //            {input: { r: 0.16, g: 0.09, b: 0.2 }, output: { white: 1 }},
-// //            {input: { r: 0.5, g: 0.5, b: 1.0 }, output: { white: 1 }}
-// //           ]
-
-// net.train(trainingData, {log: true});
-
-// let output = net.run({ r: 1, g: 0.4, b: 0 });  // { white: 0.99, black: 0.002 }
-// console.log(output)
+console.log(output)
