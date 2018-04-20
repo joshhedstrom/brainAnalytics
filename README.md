@@ -60,7 +60,22 @@ let output = net.run({
 });
 ```
 
-It will run through the 20k iterations. In theory, at the end, it will tell you what factos go into a wine with a quality of 0.9. I'm not really a wine expert, and I know there are more factors than this just, but this is a demonstration.
+It will run through the 20k iterations. In theory, at the end, it will tell you what factos go into a wine with a quality of 0.9. It will probably look something like this:
+```
+iterations: 20000, training error: 0.015436195679448003
+{ fa: 0.8056249022483826,
+  va: 0.026692241430282593,
+  ca: 0.07229070365428925,
+  rs: 0.3061937093734741,
+  ch: 0.005311837885528803,
+  fsd: 0.14233212172985077,
+  tsd: 0.3848642110824585,
+  den: 0.09931984543800354,
+  ph: 0.33168554306030273,
+  su: 0.08166047930717468,
+  al: 0.9999994039535522 }
+```
+I'm not really a wine expert, and I know there are more factors than this just, but this is a demonstration of a proof of concept.
 
 Mess around with the file and see what happens! What changes when you take away half the data set? 3/4 of the data set? What happens when you change the input? What parts of the ml.js code are you not farmiliar with? The best way to learn is by breaking something and fixing it! Google is our friend!
 
