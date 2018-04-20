@@ -29,7 +29,7 @@ for (let i = 1; i < wineData.length; i++) {
 
 net.train(wineArray, {log: true});
 
-let output = net.run({
+let result = net.run({
 	fa: 0.74,
 	va: 0.07,
 	ca: 0,
@@ -43,4 +43,4 @@ let output = net.run({
 	al: 0.94,
 });
 
-console.log(output)
+console.log(result)
