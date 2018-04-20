@@ -17,7 +17,7 @@ npm install
 
 Once the dependencies are installed, you can run the file from the command line.
 
-But first, take a moment to look through the ml.js file. The training data is in line 2. If you open up the wineData.json file,
+But first, take a moment to look through the ml.js file. The training data is in line 2. If you open up the wineData.json file, you'll see a data set about wines courtesy of UCI. Line 30 trains the algorithm against the training data. Line 32 then runs an input against the algorithm and outputs the result. To run the program, type this is in the command line:
 
 ```
 node ml.js
@@ -42,9 +42,9 @@ and change line 23 to:
 ```
 input: {
 ```
-and change the output in lines 32-45 to:
+and change the input for the result in lines 32-45 to:
 ```
-let output = net.run({
+let result = net.run({
 	// fa: 0.74,
 	// va: 0.07,
 	// ca: 0,
