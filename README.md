@@ -1,7 +1,16 @@
 # brainAnalytics
-a demonstration of brain.js
 
-This is a demonstration of how to use brain.js using a free data set on the factors of wine quality. It's real world usefullness is limited however, unless you happen to know the chemical content of whatever wine you're drinking. ;)
+This is a proof of concept / demonstration of how to use brain.js using inputs and outputs, with the example of a data set on the factors of wine quality.
+
+The goal of this is to demonstrate how to use the brain.js library so that you can apply it to your own projects. Machine Learning is a lot of fun, and if you just have a basic understanding of Javascript and Node.js, you should be able to do this. Basically what is happening is the library analyzes a data set (the chemical properties of a given wine in this instance) that includes an output: in this case the quality of the wine (I don't know who decided the level of quality in the data set originally). We train the algorithm against that dataset, and then we give it a test set of variables: a wine and it's chemical composition. The test set doesn't include the quality, because that is what we are trying to find out. After the algorithm is trained, it gives a prediction on the wine quality, based off the data set.
+
+It's real world usefullness is limited, unless you happen to know the chemical content of whatever wine you're drinking. ;)
+
+This is just one test case of infinite possibilites. Once you've used it, modify it however you like to fit your own project. This library will analyze anything, given you have the same number of variables in an input, and given that you're asking for the same output. You could easily take out factors and it would still work. You could analyze a wine based on it's Citric Acid, Residual Chlorides, and pH levels to try to figure out if you could predict the level of sulphates in any given wine. 
+
+Obviously some models make sense and others don't. Just because you can throw an algorithm against it doesn't mean it's accurate...it's only accurate to the level of it's training data. I think this data set is based off of red wines from one area of Portugal. I don't think that will help much with French white wines, but I'm not a wine expert. 
+
+Mess around with it and see what you can come up with. 
 
 ### Prerequisites
 
@@ -17,7 +26,9 @@ npm install
 
 Once the dependencies are installed, you can run the file from the command line.
 
-But first, take a moment to look through the ml.js file. The training data is in line 2. If you open up the wineData.json file, you'll see a data set about wines courtesy of UCI. Line 30 trains the algorithm against the training data. Line 32 then runs an input against the algorithm and outputs the result. To run the program, type this is in the command line:
+But first, take a moment to look through the ml.js file. The training data is in line 2. If you open up the wineData.json file, you'll see a data set about wines courtesy of UCI. Line 30 trains the algorithm against the training data. Line 32 then runs an input against the algorithm and outputs the result. 
+
+To run the program, type this is in the command line:
 
 ```
 node ml.js
@@ -83,7 +94,7 @@ I hope this is a helpful demonstration and gives you a framework to mess around 
 
 ## Built With
 
-* [Node](https://nodejs.org/)
+* [Node.js](https://nodejs.org/)
 * [Brain.js](https://github.com/BrainJS/brain.js) - Open Source Machine Learning Javascript Library
 * [UCI Machine Learning Repository Data Sets](https://archive.ics.uci.edu/ml/datasets/wine+quality) - Data set used to train model
 
