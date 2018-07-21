@@ -1,6 +1,6 @@
 # brainAnalytics
 
-This is a proof of concept / demonstration of how to use brain.js using inputs and outputs, with the example of a data set on the factors of wine quality.
+This is a proof of concept / demonstration of how to use brain.js using inputs and outputs, with the example of a data set on the factors of wine quality. I also made a [video demonstrating how to use this repo](https://youtu.be/qbuNmZLAaEI). 
 
 The goal of this is to demonstrate how to use the brain.js library so that you can apply it to your own projects. Machine Learning is a lot of fun, and if you just have a basic understanding of Javascript and Node.js, you should be able to do this. Basically what is happening is the library analyzes a data set (the chemical properties of a given wine in this instance) that includes an output: in this case the quality of the wine (I don't know who decided the level of quality in the data set originally). We train the algorithm against that dataset, and then we give it a test set of variables: a wine and it's chemical composition. The test set doesn't include the quality, because that is what we are trying to find out. After the algorithm is trained, it gives a prediction on the wine quality, based off the data set.
 
